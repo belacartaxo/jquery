@@ -179,58 +179,19 @@
     <script src="jquery.min.js"></script>
 
     <script>
-    
+        
         $(document).ready(function(){
-            /* $('h1').mousedown(()=>{
-                console.log('apertei o mouse')
-            }); */
+            /* $('#form_login [name=username]').keydown(function(e){
+                console.log(`Você apertou a tecla com o código ${e.keyCode}`)
+            }) */
 
-            /* $('h1').mouseup(()=>{
-                console.log('soltei o mouse')
-            }); */
+            /* $('#form_login [name=username]').keyup(function(e){
+                console.log(`Você soltou a tecla com o código ${e.keyCode}`)
+            }) */
 
-            /* $('h1').click(()=>{
-                console.log('clickei no mouse')
-            }); */
-
-            /* $('h3.books').click(function(){
-                $(this).text('Fui clicado')
-            }); */
-
-            /* $('img').contextmenu(function(){
-                alert('clicamos com o botão direito')
-            }); */
-
-            /* $('table tbody tr').dblclick(function(){
-                $(this).css({
-                    background: 'black',
-                    color: 'white'
-                })
-                alert('clicamos duas vezes')
-            }); */
-
-            /* $('table tbody tr').mouseenter(function(){
-                $(this).addClass('trselected')
-                console.log('mouse passando por cima')
-            });
-
-            $('table tbody tr').mouseleave(function(){
-                $(this).removeClass('trselected')
-                console.log('mouse saindo do elemento')
-            }); */
-
-            /* $('table tbody tr').hover(function(){
-                $(this).addClass('trselected')
-                console.log('mouse saindo do elemento')
-            }, function(){
-                $(this).removeClass('trselected')
-                console.log('mouse saindo do elemento')
-            }); */
-
-            $('table tbody tr').mousemove(function(e){
-                console.log(e.pageX, e.pageY)
-                console.log('mouse se movendo')
-            });
+            $('#form_login [name=username]').keypress(function(e){
+                console.log(`Você está pressionando a tecla com o código ${e.keyCode}`)
+            })
         });
         
     </script>
