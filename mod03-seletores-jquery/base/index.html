@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
     <body>
+
         <header>
 
             <form action="" id="register">
@@ -81,8 +82,8 @@
                         <li data-ano="1983">Uno <span> - Fiat</span></li>
                         <li data-ano="1996">Palio</li>
                         <li data-ano="2013">Ônix <span> - GM</span></li>
-                        <li>Fox</li>
-                        <li>Fiesta</li>
+                        <li></li>
+                        <li></li>
                     </ul>
     
                 </div>
@@ -93,16 +94,14 @@
                     <ul class="cars_list">
                         <li data-ano="1931">Porsche</li>
                         <li data-ano="1939">Ferrari <span> - Itália</span></li>
-                        <li data-ano="1948">Land Rover <span> - GM</span></li>
+                        <li data-ano="1948">Land Rover</li>
                         <li data-ano="1963">Lamborghini</li>
                         <li data-ano="2003">Fusca</li>
-                        <li></li>
-                        <li></li>
                     </ul>
     
                 </div>
 
-                <button type="button" id="toggle-cars">Exibir/ocultar carros</button>
+                <button type="button" id="toggle_cars">Exibir/Ocultar os carros</button>
 
             </main>
 
@@ -126,12 +125,23 @@
 
         </footer>
 
-        <script src="assets/js/jquery-3.6.4.min.js"></script>
+        <script src="jquery.min.js"></script>
 
         <script type="text/javascript">
+
             $(document).ready(function(){
-                
-            })
+
+                $('#toggle_cars').click(function(){
+
+                    let hiddenCars = $('.cars_list li:hidden').length;
+                    let method = (hiddenCars > 0) ? 'show' : 'hide';
+
+                    eval(`$('.cars_list li').${method}()`);                    
+
+                });
+
+            });
+
         </script>
 
     </body>

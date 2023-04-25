@@ -35,8 +35,6 @@
 
                     <h3 class="text-center books"><u>Lista de Livros</u></h3>
 
-                    <button class="btn btn-info" id="btn_add_book">Adicionar livro</button>
-
                     <table class="table table-striped" id="books_list">
                         <thead>
                             <tr>
@@ -183,7 +181,18 @@
     <script>
     
         $(document).ready(function(){
-            
+            $('h1').on('dblclick', function(){
+                $(this).text('Hcode treinamentos - jQuery');
+            });
+
+            $('#form_login').on('submit', function(e){
+                e.preventDefault();
+                console.log('Aqui estão os valores do formulário', $(this).serializeArray());
+            });
+    
+            $('#form_login [name=bio]').on('blur', function(e){
+                $(e.target.form).trigger('submit');
+            });
         });
         
     </script>
