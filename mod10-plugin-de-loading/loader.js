@@ -1,7 +1,14 @@
 (function($){
-    $.fn.load = function(action = 'load'){
-        return this.each(function(){
+    $.fn.load = function(action = 'load', params){
 
+        let defaults = {
+            divClass: 'dual-ring',
+            divQtd: 0
+        }
+
+        let options = $.extend(defaults, params);
+
+        return this.each(function(){
             switch(action){
                 case 'load':
 
@@ -19,7 +26,7 @@
                     });
         
                     let divLoad = document.createElement('div');
-                    divLoad.className = 'lds-dual-ring';
+                    divLoad.className = 'lds-' + options.divClass;
         
                     $(divLoad).css({
                         'position': 'absolute',
@@ -27,6 +34,10 @@
                         'left': '50%', 
                         'transform': 'translate(-50%, -50%)'
                     });
+
+                    for(let i = 1; i <= options.divQtd; i++){
+                        $(divLoad).append('<div></div>');
+                    }
         
                     $(divToAppend).append(divLoad);
         
